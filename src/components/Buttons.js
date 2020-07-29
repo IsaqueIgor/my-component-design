@@ -51,7 +51,7 @@ const BUTTON_MODIFIERS = {
   `,
 };
 
-const Button = styled.button`
+export const Button = styled.button`
   padding: 8px 12px;
   font-size: ${typeScale.paragraph};
   border-radius: 2px;

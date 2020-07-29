@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { PrimaryButton } from './Buttons';
-import { Illustrations } from '../assets';
+import { Illustrations, CloseIcon } from '../assets';
 
 import { typeScale } from '../utils';
 
@@ -31,10 +31,22 @@ const SignUpText = styled.p`
   text-align: center;
 `;
 
+const CloseModalButton = styled.button`
+  cursor: pointer;
+  background: none;
+  border: none;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+`;
+
 export const SignUpModal = () => {
   return (
     <ModalWrapper>
-      <img src={Illustrations.SignUp} alt='Sign up for an account!' />
+      <img src={Illustrations.SignIn} alt='Sign up for an account!' />
       <SignUpHeader>Sign Up</SignUpHeader>
       <SignUpText>
         Sign up today to get access to all of our content and features!
@@ -42,6 +54,9 @@ export const SignUpModal = () => {
       <PrimaryButton onClick={() => console.log('You signed up!')}>
         Sign Up
       </PrimaryButton>
+      <CloseModalButton arial-label='Close Modal'>
+        <CloseIcon />
+      </CloseModalButton>
     </ModalWrapper>
   );
 };

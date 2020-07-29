@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import Button, { TertiaryButton, SecondaryButton } from './components/Buttons';
+import { SignUpModal } from './components';
 import { GlobalStyle, darkTheme, defaultTheme } from './utils';
 
 const App = () => {
   const [useDarkTheme, setUseDarkTheme] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
       <button
@@ -46,16 +48,9 @@ const App = () => {
           justifyContent: 'space-around',
         }}
       >
-        <TertiaryButton
-          Buttonmodifiers={['large', 'warning', 'secondaryButtonWarning']}
-        >
-          Nothing
-        </TertiaryButton>
-        <SecondaryButton modifiers={['error', 'tertiaryButtonError']}>
-          Nothing Again
-        </SecondaryButton>
+        <SignUpModal showModal={showModal} setShowModal={setShowModal} />
+        <GlobalStyle />
       </div>
-      <GlobalStyle />
     </ThemeProvider>
   );
 };

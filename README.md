@@ -9,6 +9,8 @@ Design systems increase the speed of development across teams, as well as make y
 - Creating Themes
 - How to properly organize your design files
 - Create and properly design Components based on figma
+- Documenting Components with Storybook
+- Deploying Storybook
 
 ### Styled-Components
 

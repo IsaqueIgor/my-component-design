@@ -1,26 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
 
-function App() {
+import Button, { TertiaryButton, SecondaryButton } from './components/Buttons';
+import { GlobalStyle, darkTheme, defaultTheme } from './utils';
+
+const App = () => {
+  const [useDarkTheme, setUseDarkTheme] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
+      <button
+        style={{
+          margin: '0 16px 24px',
+          padding: '8px',
+          background: 'none',
+          cursor: 'pointer',
+          border: '2px solid #000',
+          marginTop: '60px',
+        }}
+        onClick={() => setUseDarkTheme(true)}
+      >
+        Dark theme
+      </button>
+      <button
+        style={{
+          margin: '0 16px 24px',
+          padding: '8px',
+          background: 'none',
+          cursor: 'pointer',
+          border: '2px solid #000',
+          marginTop: '60px',
+        }}
+        onClick={() => setUseDarkTheme(false)}
+      >
+        Default theme
+      </button>
+      <div
+        style={{
+          background: useDarkTheme
+            ? defaultTheme.primaryColor
+            : darkTheme.primaryColor,
+          width: '100vw',
+          height: '90vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-around',
+        }}
+      >
+        <TertiaryButton
+          Buttonmodifiers={['large', 'warning', 'secondaryButtonWarning']}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Nothing
+        </TertiaryButton>
+        <SecondaryButton modifiers={['error', 'tertiaryButtonError']}>
+          Nothing Again
+        </SecondaryButton>
+      </div>
+      <GlobalStyle />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

@@ -36,6 +36,19 @@ const App = () => {
       >
         Default theme
       </button>
+      <button
+        style={{
+          margin: '0 16px 24px',
+          padding: '8px',
+          background: 'none',
+          cursor: 'pointer',
+          border: '2px solid #000',
+          marginTop: '60px',
+        }}
+        onClick={() => setShowModal(!showModal)}
+      >
+        Toggle Modal
+      </button>
       <div
         style={{
           background: useDarkTheme

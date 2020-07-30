@@ -54,7 +54,7 @@ const BUTTON_MODIFIERS = {
 export const Button = styled.button`
   padding: 8px 12px;
   font-size: ${typeScale.paragraph};
-  border-radius: 2px;
+  border-radius: 16px;
   min-width: 100px;
   cursor: pointer;
   font-family: ${(props) => props.theme.primaryFont};

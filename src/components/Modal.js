@@ -71,4 +71,3 @@ export const SignUpModal = ({ showModal, setShowModal }) => {
     </animated.div>
   );
 };
-// https://forms.office.com/Pages/ResponsePage.aspx?id=esnHU-FlN0CyoN_1X1f9rKDct9M7NE1JpjYqv2Mp7nNUQU1ZUFdLWFlHVjUwVjZJTUVUQUdFSFZTMS4u
